@@ -30,7 +30,7 @@ namespace Test.VirtualRadar.Interface
         {
             var obj1 = Cidr.Parse("1.2.3.4/32");
             var obj2 = Cidr.Parse("1.2.3.4/32");
-            Assert.AreEqual(obj1.GetHashCode(), obj2.GetHashCode());
+            Assert.AreEqual(obj1.GetHashCode(), obj1.GetHashCode2());
         }
         #endregion
 
