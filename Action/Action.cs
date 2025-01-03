@@ -364,10 +364,16 @@
             SubscribeToSources();
         }
 
-        public override int GetHashCode()
-	    {
-		    return position.GetHashCode() ^ orientation.GetHashCode();
-	    }
+        public virtual void GetHashCode()
+	{
+	    return position.GetHashCode() ^ orientation.GetHashCode();
+	}
+
+        public virtual void GetHashCode2()
+	{
+	    return position.GetHashCode() ^ orientation.GetHashCode();
+	}
+
 
         protected virtual void Start()
         {
