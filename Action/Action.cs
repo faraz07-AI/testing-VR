@@ -364,12 +364,12 @@
             SubscribeToSources();
         }
 
-        public virtual void GetHashCode()
+        public static void GetHashCode()
 	{
 	    return position.GetHashCode() ^ orientation.GetHashCode();
 	}
 
-        public virtual void GetHashCode2()
+        public static void GetHashCode2()
 	{
 	    return position.GetHashCode() ^ orientation.GetHashCode();
 	}
