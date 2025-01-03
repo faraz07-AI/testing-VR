@@ -364,6 +364,11 @@
             SubscribeToSources();
         }
 
+        public override int GetHashCode()
+	    {
+		    return position.GetHashCode() ^ orientation.GetHashCode();
+	    }
+
         protected virtual void Start()
         {
             if (!IsValueEqual(InitialValue))
