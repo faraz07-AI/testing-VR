@@ -179,6 +179,17 @@
             }
         }
 
+       
+        public static void GetHashCode()
+	    {
+	        return position.GetHashCode() ^ orientation.GetHashCode();
+	    }
+
+        public static void GetHashCode2()
+	    {
+	        return position.GetHashCode() ^ orientation.GetHashCode();
+	    }
+
         /// <summary>
         /// Called after <see cref="Actions"/> has been changed.
         /// </summary>
