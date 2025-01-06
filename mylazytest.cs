@@ -114,5 +114,27 @@ namespace Test.Zinnia.Tracking.Velocity
             Object.DestroyImmediate(trackerTwo.gameObject);
             Object.DestroyImmediate(trackerThree.gameObject);
         }
+
+
+        [Test]
+        public void TestDecrypt()
+        {
+            byte[] encryptedData = File.ReadAllBytes(EncryptedDataFile);
+            byte[] expectedData = File.ReadAllBytes(DecryptedDataFile);
+            string expectedResult = System.Text.Encoding.UTF8.GetString(expectedData);
+
+            string result = Cryptographer.Decrypt(encryptedData, "test");
+            Assert.AreEqual(expectedResult, result, "Testing simple decrypt");
+        }
+
+        [Test]
+        public void TestEncrypt()
+        {
+            string xml = File.ReadAllText(DecryptedDataFile);
+            byte[] encrypted = Cryptographer.Encrypt(xml, "test");
+            string decrypted = Cryptographer.Decrypt(encrypted, "test");
+
+            Assert.AreEqual(xml, decrypted, "Testing simple encrypt and decrypt");
+        }
     }
 }
