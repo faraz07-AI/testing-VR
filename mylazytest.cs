@@ -15,6 +15,8 @@ namespace Test.Zinnia.Tracking.Velocity
     {
         private GameObject containingObject;
         private VelocityTrackerProcessor subject;
+        private const string EncryptedDataFile = "ENCRYPTED_DATA_FILE_4_14";
+        private const string DecryptedDataFile = "DECRYPTED_DATA_FILE_4_14";
 
         [SetUp]
         public void SetUp()
