@@ -41,15 +41,15 @@ namespace Test.VirtualRadar.Database
     }
 
     
-		[UnityTest]
-		public IEnumerator CollidingWithCherryIncreasesScore()
-		{
-			GameObject cherry = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Tests/Prefabs/Pickups/Cherry"));
-			int score = pacmanScore.GetScore();
-			pacman.transform.position = cherry.transform.position;
-			yield return new WaitForSeconds(WAIT_TIME);
-			Assert.AreEqual(score + Constants.FRUIT_EATEN_SCORE, pacmanScore.GetScore());
-			Object.Destroy(cherry);
-		}
+   [UnityTest]
+   public IEnumerator CollidingWithCherryIncreasesScore()
+   {
+      GameObject cherry = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Tests/Prefabs/Pickups/Cherry"));
+      int score = pacmanScore.GetScore();
+      pacman.transform.position = cherry.transform.position;
+      yield return new WaitForSeconds(WAIT_TIME);
+      Assert.AreEqual(score + Constants.FRUIT_EATEN_SCORE, pacmanScore.GetScore());
+      Object.Destroy(cherry);
+    }
 }
 
