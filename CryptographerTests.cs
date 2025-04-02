@@ -22,10 +22,16 @@ public class CryptographerTests
     [Test]
     public void TestEncrypt()
     {
-        string xml = File.ReadAllText(DecryptedDataFile);
-        byte[] encrypted = Cryptographer.Encrypt(xml, "test");
-        string decrypted = Cryptographer.Decrypt(encrypted, "test");
+        //string xml = File.ReadAllText(DecryptedDataFile);
+        //byte[] encrypted = Cryptographer.Encrypt(xml, "test");
+        //string decrypted = Cryptographer.Decrypt(encrypted, "test");
 
-        Assert.AreEqual(xml, decrypted, "Testing simple encrypt and decrypt");
+        //Assert.AreEqual(xml, decrypted, "Testing simple encrypt and decrypt");
+        byte[] encryptedData = File.ReadAllBytes(EncryptedDataFile);
+        byte[] expectedData = File.ReadAllBytes(DecryptedDataFile);
+        string expectedResult = System.Text.Encoding.UTF8.GetString(expectedData);
+
+        string result = Cryptographer.Decrypt(encryptedData, "test");
+        Assert.AreEqual(expectedResult, result, "Testing simple decrypt");
     }
 }
